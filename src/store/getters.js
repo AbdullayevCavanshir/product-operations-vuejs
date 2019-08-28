@@ -1,3 +1,4 @@
+// state de olanlari cagirmaq ucun
 export const getTradeResult = (state) => {
     return {
         purchase: state.purchase,

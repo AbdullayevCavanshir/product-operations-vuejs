@@ -3,10 +3,13 @@ import {router} from "../../router"
 //import { stat } from "fs";
 // import { stat } from "fs";
 
+
 const state = {
     products: []
 }
 
+
+//product ve products i lazim olduqda cagirmaq ucun
 const getters = {
     getProducts(state){
         return state.products;
@@ -18,6 +21,7 @@ const getters = {
     }
 }
 
+//bazaya gonderilen product in products a gonderilmesi
 const mutations = {
     updateProductList(state, product){
         state.products.push(product);
@@ -25,9 +29,11 @@ const mutations = {
 
 }
 
+
+//bazaya qosulub product i daxil etmek yada cixarmaq
 const actions = {
     initApp({commit}){
-        //vue resource
+        //sayt yuklendikden sonra list in db den cagirilmasi
         Vue.http.get("https://urun-islemleri-prod-da40e.firebaseio.com/products.json")
         .then(response => {
             let data = response.body;
@@ -37,14 +43,15 @@ const actions = {
             }
         })
     }, 
+
+    //product in db e gonderilmesi 
     saveProduct({dispatch, commit, state}, product){
-        //vue resource
         Vue.http.post("https://urun-islemleri-prod-da40e.firebaseio.com/products.json", product)
             .then((response) => {
                 // urun listesinin guncellenmesi
                 product.key = response.body.name;
                 commit("updateProductList", product);
-
+   
                 //alis satis bakiye guncelleme
                 let tradeResult = {
                     purchase: product.price,
@@ -55,8 +62,8 @@ const actions = {
                 router.replace("/");
             })
     },
+    //product in satilmasi
     sellProduct({state, commit,dispatch}, payload){
-        //vue resource
         let product = state.products.filter(element => {
             return element.key ==payload.key;
         })

@@ -60,6 +60,7 @@ export default {
         }
     },
     computed: {
+        // button active or passive
         saveEnabled(){
             if(this.product.title.length > 0 && this.product.count.length > 0 && this.product.price.length > 0 && this.product.description.length > 0){
                 return false;
@@ -81,6 +82,7 @@ export default {
         }
 
     },
+    //save etmeden cixmamaq ucun bildiris
     beforeRouteLeave (to, from, next) {
         if((this.product.title.length > 0 || this.product.count.length > 0 || this.product.price.length > 0 || this.product.description.length > 0) && !this.saveButtonClicked){
             if(confirm("There are unsaved changes. Do you want to go out anyway?")){
