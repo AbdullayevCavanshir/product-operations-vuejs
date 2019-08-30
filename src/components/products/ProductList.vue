@@ -26,9 +26,9 @@
                         </tbody>
                     </table>
                     <div class="alert alert-warning" v-else>
-                        <strong>Henüz Burada Bir Kayıt Bulamadık</strong>
+                        <strong>We haven't found a record here yet</strong>
                         <br>
-                        <small>Kayıt Eklemek için Ürün İşlemleri menüsünden yararlanabilirsiniz
+                        <small>You can use the Product Operations menu to add a record
                         </small>
                     </div>
                 </div>
