@@ -16,7 +16,7 @@
                         <th>Description</th>
                         </thead>
                         <tbody>
-                        <tr v-for="product in getProducts" :key="product.id">
+                        <tr v-for="product in getProducts" :key="product.key">
                             <td class="align-middle text-center"><span class="badge badge-info">{{product.key}}  </span></td>
                             <td class="align-middle text-center">{{product.title}} </td>
                             <td class="align-middle text-center" :class="getCountClasses(product.count)">{{product.count}} </td>
