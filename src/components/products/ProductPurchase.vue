@@ -5,37 +5,37 @@
                 <div class="lds-ripple">
                 <div></div>
                  <div></div>
+                 </div>
             </div>
-</div>
-    <div class="row">
-        <div class="col-6 offset-3 pt-3 card mt-5 shadow">
-            <div class="card-body">
-                <h3>Product Purchase</h3>
-                <hr>
-                <div class="form-group">
-                    <label>Product Name</label>
-                    <input v-model="product.title" type="text" class="form-control" placeholder="Enter product name..">
+            <div class="row">
+                <div class="col-6 offset-3 pt-3 card mt-5 shadow">
+                    <div class="card-body">
+                        <h3>Product Purchase</h3>
+                        <hr>
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input v-model="product.title" type="text" class="form-control" placeholder="Enter product name..">
+                        </div>
+                        <div class="form-group">
+                            <label>Number</label>
+                            <input v-model="product.count" type="number" class="form-control" placeholder="Enter product number..">
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input v-model="product.price" type="number" class="form-control" placeholder="Enter product price..">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea v-model="product.description" cols="30" rows="5" placeholder="Enter a description of the product..."
+                                    class="form-control"></textarea>
+                        </div>
+                        <hr>
+                        <button class="btn btn-primary" :disabled="saveEnabled" @click="saveProduct">Save</button>
+                        <div style="width:100px; height:100px; margin-top:100px;"></div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Number</label>
-                    <input v-model="product.count" type="number" class="form-control" placeholder="Enter product number..">
-                </div>
-                <div class="form-group">
-                    <label>Price</label>
-                    <input v-model="product.price" type="number" class="form-control" placeholder="Enter product price..">
-                </div>
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea v-model="product.description" cols="30" rows="5" placeholder="Enter a description of the product..."
-                              class="form-control"></textarea>
-                </div>
-                <hr>
-                <button class="btn btn-primary" :disabled="saveEnabled" @click="saveProduct">Save</button>
-                <div style="width:100px; height:100px; margin-top:100px;"></div>
             </div>
         </div>
-    </div>
-</div>
     </div>
 </template>
 
