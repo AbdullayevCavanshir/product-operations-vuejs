@@ -71,7 +71,7 @@ export default {
         },
         beforeRouteLeave (to, from, next) {
         if(this.selectedProduct !== null || this.product_count > 0){
-            if(confirm("kaydedilmemis degisiklikler var. Yinede cikmak istiyor musunuz?")){
+            if(confirm("There are unsaved changes. Do you want to go out anyway?")){
                 next();
             }else{
             next(false);
